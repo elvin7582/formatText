@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Formatter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f9f9f9;
+        max-width: 600px;
+        margin: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #007bff;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .output {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text Formatter</h1>
+
+    <textarea id="inputText" placeholder="Enter text here..."></textarea><br />
+
+    <button onclick="toUpperCase()">Convert to Uppercase</button>
+    <button onclick="toLowerCase()">Convert to Lowercase</button>
+    <button onclick="trimText()">Trim Extra Spaces</button>
+    <button onclick="reverseText()">Reverse Text</button>
+
+    <div class="output">
+      <h3>Formatted Text:</h3>
+      <p id="outputText"></p>
+    </div>
+
+
+    <script>
+      // Function to convert text to uppercase
+      function toUpperCase() {
+        const inputText = document.getElementById("inputText").value;
+        const formattedText = inputText.toUpperCase();
+        document.getElementById("outputText").textContent = formattedText;
+      }
+
+      // Function to convert text to lowercase
+      function toLowerCase() {
+        const inputText = document.getElementById("inputText").value;
+        const formattedText = inputText.toLowerCase();
+        document.getElementById("outputText").textContent = formattedText;
+      }
+
+      // Function to trim leading and trailing spaces
+      function trimText() {
+        const inputText = document.getElementById("inputText").value;
+        const formattedText = inputText.trim();
+        document.getElementById("outputText").textContent = formattedText;
+      }
+
+      // Function to reverse the text
+      function reverseText() {
+        const inputText = document.getElementById("inputText").value;
+        const formattedText = inputText.split("").reverse().join("");
+        document.getElementById("outputText").textContent = formattedText;
+      }
+    </script>
+  </body>
+</html>
